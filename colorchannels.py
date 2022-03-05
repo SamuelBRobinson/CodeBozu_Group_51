@@ -3,19 +3,19 @@ import cv2
 
 def reddify(image):
     r,g,b = cv2.split(image)
-    blank = np.zeros(img.shape[:2], dtype='uint8') # removes all colour from selected channel
+    blank = np.zeros(image.shape[:2], dtype='uint8') # removes all colour from selected channel
     red=cv2.merge([r,blank,blank]) 
     return red
 
 def greenify(image):
     r,g,b = cv2.split(image)
-    blank = np.zeros(img.shape[:2], dtype='uint8')
+    blank = np.zeros(image.shape[:2], dtype='uint8')
     green=cv2.merge([blank,g,blank])
     return green
 
 def blueify(image):
     r,g,b = cv2.split(image)
-    blank = np.zeros(img.shape[:2], dtype='uint8')
+    blank = np.zeros(image.shape[:2], dtype='uint8')
     blue= cv2.merge([blank,blank,b])
 
 def grayscale(image):

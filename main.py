@@ -10,7 +10,10 @@ check = False
 while check is False:
     check = True
     input_value = input("Select what you would like to do with your inputted image from the list - Options being \n1:Red channel only\n"
-                        + "2:Green channel only\n"+"3:Blue channel only\n"+"4:Grayscale\n"+"5:Negative(inverted)\n")
+                        +"2:Green channel only\n"+
+                        "3:Blue channel only\n"+
+                        "4:Grayscale\n"+
+                        "5:Negative(inverted)\n")
     if input_value =="1":
         temp = reddify(image)
         plt.imshow(temp)
