@@ -1,35 +1,32 @@
-import matplotlib.image as img
+import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
-from colorchannels import reddify,greenify,blueify,grayscale,negative
+import numpy as np
+import cv2 as cv
+from del0 import redify,greenify,blueify,negative,grayscale #imports functions from del0 file
 
-image = img.imread("Bozu.png")
-output = image
+img = cv.imread("Bozu.png", 1)
+start = False
 
-check = False
-
-while check is False:
-    check = True
-    input_value = input("Select what you would like to do with your inputted image from the list - Options being \n1:Red channel only\n"
-                        +"2:Green channel only\n"+
-                        "3:Blue channel only\n"+
-                        "4:Grayscale\n"+
-                        "5:Negative(inverted)\n")
-    if input_value =="1":
-        temp = reddify(image)
-        plt.imshow(temp)
-    elif input_value =="2":
-        temp = greenify(image)
-        plt.imshow(temp)
-    elif input_value =="3":
-        temp = blueify(image)
-        plt.imshow(temp)
-    elif input_value =="4":
-        temp = grayscale(image)
-        plt.imshow(temp)
-    elif input_value =="5":
-        temp = negative(image)
-        plt.imshow(temp)
+while start is False:
+    start = True
+    userInput = input("1: Red-only photo\n" +
+           "2: Green-only photo\n" + "3: Blue-only photo\n" + "4: Grayscale photo\n" + "5: Negative photo\n")
+    if userInput == "1":
+        tempImg = redify(img)
+        plt.imshow(tempImg)
+    elif userInput == "2":
+        tempImg = greenify(img)
+        plt.imshow(tempImg)
+    elif userInput == "3":
+        tempImg = blueify(img)
+        plt.imshow(tempImg)
+    elif userInput == "4":
+        tempImg = grayscale(img)
+        plt.imshow(tempImg)
+    elif userInput == "5":
+        tempImg = negative(img)
+        plt.imshow(tempImg)
     else:
-        check = False
+        start = False
 
 plt.show()
