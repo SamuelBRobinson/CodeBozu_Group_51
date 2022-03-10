@@ -26,10 +26,11 @@ def blueify(img):
 
 
 def grayscale(img):
-    img = img[:, :, 0] * 0.2989 + 0.5870 * img[:, :, 1] + 0.1140 * img[:, :, 2]
-    return img
-
-
+    r, g, b = img[:,:,0], img[:,:,1], img[:,:,2]
+    grayify = 0.2989 * R + 0.5870 * G + 0.1140 * B
+    plt.imshow(imgGray, cmap='gray')
+    plt.show()
+    
 def negative(img):
     img[:, :, 0] = 255 - img[:, :, 0]
     img[:, :, 1] = 255 - img[:, :, 1]
