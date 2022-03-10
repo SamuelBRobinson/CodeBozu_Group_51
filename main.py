@@ -2,7 +2,7 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2 as cv
-from del0 import redify,greenify,blueify,negative,grayscale #imports functions from del0 file
+from functions import redify,greenify,blueify,negative,grayscale #imports functions from del0 file
 
 img = cv.imread("Bozu.png", 1)
 start = False
