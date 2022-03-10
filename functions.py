@@ -36,3 +36,17 @@ def negative(img):
     img[:, :, 1] = 255 - img[:, :, 1]
     img[:, :, 2] = 255 - img[:, :, 2]
     return img
+
+def horizontal_flip(img):
+    shape = img.shape
+    tempImg = np.zeros([shape[0], shape[1], 3], np.uint8)
+    for i in range(shape[1]):
+        tempImg[:, i, :] = img[:, shape[1]-i-1, :]
+    return tempImg
+
+def vertical_flip(img):
+    shape = img.shape
+    tempImg = np.zeros([shape[0], shape[1], 3], np.uint8)
+    for i in range(shape[0]):
+        tempImg[i, :, :] = img[shape[0]-i-1, :, :]
+    return tempImg

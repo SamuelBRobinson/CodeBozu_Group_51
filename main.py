@@ -2,7 +2,7 @@ import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2 as cv
-from functions import redify,greenify,blueify,negative,grayscale #imports functions from del0 file
+from functions import redify,greenify,blueify,negative,grayscale,horizontal_flip,vertical_flip #imports functions from del0 file
 
 img = cv.imread("Bozu.png", 1)
 start = False
@@ -24,6 +24,9 @@ while start is False:
         tempImg = grayscale(img)
         plt.imshow(tempImg)
     elif userInput == "5":
+        tempImg = negative(img)
+        plt.imshow(tempImg)
+    elif userInput == "6":
         tempImg = negative(img)
         plt.imshow(tempImg)
     else:
