@@ -31,7 +31,6 @@ def grayscale(img):
 
 
 def negative(img):
-    print("neg")
     img[:, :, 0] = 255 - img[:, :, 0]
     img[:, :, 1] = 255 - img[:, :, 1]
     img[:, :, 2] = 255 - img[:, :, 2]
